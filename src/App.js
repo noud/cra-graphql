@@ -2,6 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// @todo dev
+import query from './graphql/Foo';
+console.log('App Foo query', query);
+
 function App() {
   return (
     <div className="App">
