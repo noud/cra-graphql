@@ -1,13 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as serviceWorker from './serviceWorker';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { BrowserRouter as Router } from "react-router-dom";
+import { Route } from 'react-router'
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import UserPage from './components/UserPage'
+
+const client = new ApolloClient({
+  uri: 'http://127.0.0.1:8000/graphql'
+});
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ApolloProvider client={client}>
+    <Router>
+      <div>
+        <Route path="/user" component={UserPage} />
+        <Route path="/" component={App} />
+      </div>
+    </Router>
+  </ApolloProvider>,
   document.getElementById('root')
 );
 

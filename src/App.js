@@ -2,11 +2,17 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-// @todo dev
-import query from './graphql/Foo';
-console.log('App Foo query', query);
+// @todo dev remove
+// import { useQuery } from '@apollo/react-hooks';
+// import query from './graphql/User';
+// console.log('App User query', query);
 
 function App() {
+  // @todo dev remove
+  // const User = useQuery(query);
+  // const UserData = JSON.stringify(User.data, null, 2);
+  // console.log('App UserData', UserData);
+
   return (
     <div className="App">
       <header className="App-header">

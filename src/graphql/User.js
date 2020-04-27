@@ -1,11 +1,11 @@
 import { gql } from 'graphql.macro';
- 
+
 const query = gql`
-  query User {
-    user(id: 5) {
-      lastName
-      ...UserEntry1
+  query GetUser($id: ID!) {
+    apolloSingleUser(id: $id) {
+      name
+      email
     }
   }
 `;
-// console.log('User query', query);
+export default query;
