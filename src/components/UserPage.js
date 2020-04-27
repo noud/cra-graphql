@@ -18,7 +18,7 @@ class UserPage extends React.Component {
   }
 }
 
-const UserQuery = loader('../graphql/user.graphql');
+const UserQuery = loader('../graphql/user.gql');
 
 export default graphql(UserQuery, {
   // The variable $keyword for the query is computed from the
